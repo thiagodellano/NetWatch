@@ -6,7 +6,9 @@ app = Flask(__name__)
 def home():
 
     dados = {
-        "web_status": "🟢 Online"
+        "web_status": "🟢 Online",
+        "latencia": 42,
+        "rps": 315
     }
 
     return render_template(

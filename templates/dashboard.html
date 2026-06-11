@@ -18,8 +18,19 @@
         <div class="col-md-3">
             <div class="card border-success">
                 <div class="card-body">
-                    <h5>Web Server</h5>
-                    <p class="text-success">🟢 Online</p>
+                  <h5>Web Server</h5>
+
+<p class="text-success">
+    {{ dados.web_status }}
+</p>
+
+<p>
+    Latência: {{ dados.latencia }} ms
+</p>
+
+<p>
+    Requests/s: {{ dados.rps }}
+</p>
                 </div>
             </div>
         </div>
