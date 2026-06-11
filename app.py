@@ -4,7 +4,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("dashboard.html")
+
+    dados = {
+        "web_status": "🟢 Online"
+    }
+
+    return render_template(
+        "dashboard.html",
+        dados=dados
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
