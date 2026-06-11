@@ -15,49 +15,78 @@
 
     <div class="row">
 
+        <!-- Web Server -->
         <div class="col-md-3">
             <div class="card border-success">
                 <div class="card-body">
-                  <h5>Web Server</h5>
+                    <h5>Web Server</h5>
 
-<p class="text-success">
-    {{ dados.web_status }}
-</p>
+                    <p class="text-success">
+                        {{ dados.web_status }}
+                    </p>
 
-<p>
-    Latência: {{ dados.latencia }} ms
-</p>
+                    <p>
+                        Latência: {{ dados.latencia }} ms
+                    </p>
 
-<p>
-    Requests/s: {{ dados.rps }}
-</p>
+                    <p>
+                        Requests/s: {{ dados.rps }}
+                    </p>
                 </div>
             </div>
         </div>
 
+        <!-- Database -->
         <div class="col-md-3">
             <div class="card border-success">
                 <div class="card-body">
                     <h5>Database</h5>
-                    <p class="text-success">🟢 Online</p>
+
+                    <p class="text-success">
+                        {{ dados.db_status }}
+                    </p>
+
+                    <p>
+                        CPU: {{ dados.cpu }}%
+                    </p>
+
+                    <p>
+                        Memória: {{ dados.memoria }}%
+                    </p>
                 </div>
             </div>
         </div>
 
+        <!-- DNS -->
         <div class="col-md-3">
             <div class="card border-warning">
                 <div class="card-body">
                     <h5>DNS</h5>
-                    <p class="text-warning">🟡 Atenção</p>
+
+                    <p class="text-warning">
+                        {{ dados.dns_status }}
+                    </p>
+
+                    <p>
+                        Tempo resposta: {{ dados.dns_tempo }} ms
+                    </p>
                 </div>
             </div>
         </div>
 
+        <!-- SMTP -->
         <div class="col-md-3">
             <div class="card border-danger">
                 <div class="card-body">
                     <h5>SMTP</h5>
-                    <p class="text-danger">🔴 Offline</p>
+
+                    <p class="text-danger">
+                        {{ dados.smtp_status }}
+                    </p>
+
+                    <p>
+                        Falhas: {{ dados.smtp_falhas }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -67,3 +96,4 @@
 </div>
 
 </body>
+</html>
