@@ -6,21 +6,27 @@ app = Flask(__name__)
 def home():
 
     dados = {
-        "web_status": "🟢 Online",
-        "latencia": 42,
-        "rps": 315,
+        "web": {
+            "status": "🟢 Online",
+            "latencia": 42,
+            "rps": 315
+        },
 
-        "db_status": "🟢 Online",
-        "cpu": 38,
-        "memoria": 62,
+        "database": {
+            "status": "🟢 Online",
+            "cpu": 38,
+            "memoria": 62
+        },
 
-        "dns_status": "🟡 Atenção",
-        "dns_tempo": 180,
+        "dns": {
+            "status": "🟡 Atenção",
+            "tempo": 180
+        },
 
-        "smtp_status": "🔴 Offline",
-        "smtp_falhas": 12
-
-
+        "smtp": {
+            "status": "🔴 Offline",
+            "falhas": 12
+        }
     }
 
     return render_template(

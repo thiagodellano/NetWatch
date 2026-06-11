@@ -22,15 +22,15 @@
                     <h5>Web Server</h5>
 
                     <p class="text-success">
-                        {{ dados.web_status }}
+                        {{ dados.web.status }}
                     </p>
 
                     <p>
-                        Latência: {{ dados.latencia }} ms
+                        Latência: {{ dados.web.latencia }} ms
                     </p>
 
                     <p>
-                        Requests/s: {{ dados.rps }}
+                        Requests/s: {{ dados.web.rps }}
                     </p>
                 </div>
             </div>
@@ -43,15 +43,15 @@
                     <h5>Database</h5>
 
                     <p class="text-success">
-                        {{ dados.db_status }}
+                        {{ dados.database.status }}
                     </p>
 
                     <p>
-                        CPU: {{ dados.cpu }}%
+                        CPU: {{ dados.database.cpu }}%
                     </p>
 
                     <p>
-                        Memória: {{ dados.memoria }}%
+                        Memória: {{ dados.database.memoria }}%
                     </p>
                 </div>
             </div>
@@ -64,11 +64,11 @@
                     <h5>DNS</h5>
 
                     <p class="text-warning">
-                        {{ dados.dns_status }}
+                        {{ dados.dns.status }}
                     </p>
 
                     <p>
-                        Tempo resposta: {{ dados.dns_tempo }} ms
+                        Tempo resposta: {{ dados.dns.tempo }} ms
                     </p>
                 </div>
             </div>
@@ -81,11 +81,11 @@
                     <h5>SMTP</h5>
 
                     <p class="text-danger">
-                        {{ dados.smtp_status }}
+                        {{ dados.smtp.status }}
                     </p>
 
                     <p>
-                        Falhas: {{ dados.smtp_falhas }}
+                        Falhas: {{ dados.smtp.falhas }}
                     </p>
                 </div>
             </div>
