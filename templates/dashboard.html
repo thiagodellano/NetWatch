@@ -15,6 +15,7 @@
 
     <div class="row">
 
+        <!-- Web Server -->
         <div class="col-md-3">
             <div class="card border-success">
                 <div class="card-body">
@@ -24,13 +25,18 @@
                         {{ dados.web.status }}
                     </p>
 
-                    <p>Latência: {{ dados.web.latencia }} ms</p>
+                    <p>
+                        Latência: {{ dados.web.latencia }} ms
+                    </p>
 
-                    <p>Requests/s: {{ dados.web.rps }}</p>
+                    <p>
+                        Requests/s: {{ dados.web.rps }}
+                    </p>
                 </div>
             </div>
         </div>
 
+        <!-- Database -->
         <div class="col-md-3">
             <div class="card border-success">
                 <div class="card-body">
@@ -40,13 +46,18 @@
                         {{ dados.database.status }}
                     </p>
 
-                    <p>CPU: {{ dados.database.cpu }}%</p>
+                    <p>
+                        CPU: {{ dados.database.cpu }}%
+                    </p>
 
-                    <p>Memória: {{ dados.database.memoria }}%</p>
+                    <p>
+                        Memória: {{ dados.database.memoria }}%
+                    </p>
                 </div>
             </div>
         </div>
 
+        <!-- DNS -->
         <div class="col-md-3">
             <div class="card border-warning">
                 <div class="card-body">
@@ -56,11 +67,14 @@
                         {{ dados.dns.status }}
                     </p>
 
-                    <p>Tempo resposta: {{ dados.dns.tempo }} ms</p>
+                    <p>
+                        Tempo resposta: {{ dados.dns.tempo }} ms
+                    </p>
                 </div>
             </div>
         </div>
 
+        <!-- SMTP -->
         <div class="col-md-3">
             <div class="card border-danger">
                 <div class="card-body">
@@ -70,7 +84,9 @@
                         {{ dados.smtp.status }}
                     </p>
 
-                    <p>Falhas: {{ dados.smtp.falhas }}</p>
+                    <p>
+                        Falhas: {{ dados.smtp.falhas }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -79,6 +95,7 @@
 
     <hr class="mt-5">
 
+    <!-- Resumo Geral -->
     <div class="card mb-4">
         <div class="card-body">
 
@@ -90,11 +107,16 @@
 
             <p>🔴 Offline: {{ resumo.offline }}</p>
 
-            <p><strong>Disponibilidade: {{ resumo.disponibilidade }}%</strong></p>
+            <p>
+                <strong>
+                    Disponibilidade: {{ resumo.disponibilidade }}%
+                </strong>
+            </p>
 
         </div>
     </div>
 
+    <!-- Alertas -->
     <div class="card border-danger mb-4">
         <div class="card-body">
 
@@ -117,6 +139,37 @@
         </div>
     </div>
 
+    <!-- Segurança -->
+    <div class="card border-primary mb-4">
+        <div class="card-body">
+
+            <h3>🛡️ Segurança</h3>
+
+            <p>
+                Requests/s: {{ seguranca.requests }}
+            </p>
+
+            <p>
+                Possível DDoS: {{ seguranca.ddos }}
+            </p>
+
+            <p>
+                Tentativas de Login: {{ seguranca.tentativas_login }}
+            </p>
+
+            <p>
+                Possível Brute Force: {{ seguranca.bruteforce }}
+            </p>
+
+            <p>
+                Vulnerabilidades Detectadas:
+                {{ seguranca.vulnerabilidades }}
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Gráfico -->
     <h2 class="mt-4">Latência do Web Server</h2>
 
     <div class="card">

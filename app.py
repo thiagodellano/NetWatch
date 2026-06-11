@@ -36,6 +36,14 @@ def home():
         "disponibilidade": 75
     }
 
+    seguranca = {
+        "requests": 315,
+        "ddos": "Não",
+        "tentativas_login": 12,
+        "bruteforce": "Não",
+        "vulnerabilidades": 0
+    }
+
     alertas = []
 
     if dados["web"]["latencia"] > 45:
@@ -48,7 +56,8 @@ def home():
         "dashboard.html",
         dados=dados,
         resumo=resumo,
-        alertas=alertas
+        alertas=alertas,
+        seguranca=seguranca
     )
 
 if __name__ == "__main__":
