@@ -46,13 +46,18 @@ def home():
 
     if seguranca["bruteforce"] == "Sim":
         alertas.append("🛡️ Possível ataque de força bruta detectado")
-
+    notificacao = {
+    "destinatario": "admin@netwatch.local",
+    "mensagem": alertas[0] if alertas else "Nenhum alerta",
+    "status": "Enviado"
+}
     return render_template(
         "dashboard.html",
         dados=dados,
         resumo=resumo,
         alertas=alertas,
-        seguranca=seguranca
+        seguranca=seguranca,
+        notificacao=notificacao
     )
 
 if __name__ == "__main__":
