@@ -1,32 +1,19 @@
 from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
 
+    with open("metrics.json", "r", encoding="utf-8") as arquivo:
+        metrics = json.load(arquivo)
+
     dados = {
-        "web": {
-            "status": "🟢 Online",
-            "latencia": 42,
-            "rps": 315
-        },
-
-        "database": {
-            "status": "🟢 Online",
-            "cpu": 38,
-            "memoria": 62
-        },
-
-        "dns": {
-            "status": "🟡 Atenção",
-            "tempo": 180
-        },
-
-        "smtp": {
-            "status": "🔴 Offline",
-            "falhas": 12
-        }
+        "web": metrics["web"],
+        "database": metrics["database"],
+        "dns": metrics["dns"],
+        "smtp": metrics["smtp"]
     }
 
     resumo = {
@@ -36,13 +23,8 @@ def home():
         "disponibilidade": 75
     }
 
-    seguranca = {
-        "requests": 315,
-        "tentativas_login": 12,
-        "vulnerabilidades": 0
-    }
+    seguranca = metrics["seguranca"]
 
-    # Detecção automática
     seguranca["ddos"] = (
         "Sim" if seguranca["requests"] > 1000 else "Não"
     )

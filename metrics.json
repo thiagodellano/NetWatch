@@ -1,0 +1,29 @@
+{
+  "web": {
+    "status": "🟢 Online",
+    "latencia": 42,
+    "rps": 315
+  },
+
+  "database": {
+    "status": "🟢 Online",
+    "cpu": 38,
+    "memoria": 62
+  },
+
+  "dns": {
+    "status": "🟡 Atenção",
+    "tempo": 180
+  },
+
+  "smtp": {
+    "status": "🔴 Offline",
+    "falhas": 12
+  },
+
+  "seguranca": {
+    "requests": 315,
+    "tentativas_login": 12,
+    "vulnerabilidades": 0
+  }
+}
