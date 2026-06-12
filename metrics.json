@@ -25,5 +25,11 @@
     "requests": 315,
     "tentativas_login": 12,
     "vulnerabilidades": 0
-  }
+  },
+  
+"configuracao": {
+  "alterada": false,
+  "ultima_alteracao": "12/06/2026 09:45"
+}
+
 }
