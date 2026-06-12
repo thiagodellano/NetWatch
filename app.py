@@ -38,11 +38,18 @@ def home():
 
     seguranca = {
         "requests": 315,
-        "ddos": "Não",
         "tentativas_login": 12,
-        "bruteforce": "Não",
         "vulnerabilidades": 0
     }
+
+    # Detecção automática
+    seguranca["ddos"] = (
+        "Sim" if seguranca["requests"] > 1000 else "Não"
+    )
+
+    seguranca["bruteforce"] = (
+        "Sim" if seguranca["tentativas_login"] > 50 else "Não"
+    )
 
     alertas = []
 
@@ -51,6 +58,12 @@ def home():
 
     if dados["smtp"]["status"] == "🔴 Offline":
         alertas.append("🔴 Serviço SMTP Offline")
+
+    if seguranca["ddos"] == "Sim":
+        alertas.append("🛡️ Possível ataque DDoS detectado")
+
+    if seguranca["bruteforce"] == "Sim":
+        alertas.append("🛡️ Possível ataque de força bruta detectado")
 
     return render_template(
         "dashboard.html",
